@@ -33,10 +33,12 @@
 
 Debug/*
 .settings/*
-cscope.*
+cscope.files
+cscope.out
 *.pdf
 *.gpdsc
 *.txt
 *~
 /Debug/
 STM32CubeIDE/*
+src/stm32Info.cpp
