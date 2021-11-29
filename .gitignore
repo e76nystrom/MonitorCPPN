@@ -38,3 +38,5 @@ cscope.*
 *.gpdsc
 *.txt
 *~
+/Debug/
+STM32CubeIDE/*
