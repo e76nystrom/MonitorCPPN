@@ -31,6 +31,11 @@
 			<location>C:/Development/EclipseCPP/MonitorCPP/src</location>
 		</link>
 		<link>
+			<name>lathe_src</name>
+			<type>2</type>
+			<location>C:/Development/EclipseCPP/LatheCPP/lathe_src</location>
+		</link>
+		<link>
 			<name>monitor</name>
 			<type>2</type>
 			<location>C:/Development/Arduino/monitor/src</location>
