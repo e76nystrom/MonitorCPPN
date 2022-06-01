@@ -31,15 +31,21 @@
 *.out
 *.app
 
+.#*
+*.bak
+
 Debug/*
 .settings/*
 cscope.files
 cscope.out
 *.pdf
 *.gpdsc
-*.txt
 *~
 /Debug/
 STM32CubeIDE/*
 src/stm32Info.cpp
 License.md
+.idea/*
+cmake-build-debug/*
+LICENSE.txt
+MonitorCPPN.txt

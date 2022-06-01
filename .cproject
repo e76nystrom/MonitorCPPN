@@ -173,9 +173,9 @@
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Drivers/STM32F1xx_HAL_Driver/Src"/>
 						<entry excluding="stm32Info.cpp|sysmem.c|syscalls.c|spi.c|i2c.c|monitor.cpp|system_stm32f1xx.c|stm32f1xx_it.c|stm32f1xx_hal_tim_ex.c|stm32f1xx_hal_msp.c|startup_stm32f103xb.S|getSP.S|usart.c|Time.cpp|tim.c|rtc.c|main.c|gpio.c|dma.c|adc.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="MonitorSrc"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Src"/>
 						<entry excluding="i2cx.cpp|spix.cpp|lcd.cpp|handler.S|zcontrol.cpp|xcontrol.cpp|serialio.cpp|remvar.cpp|remfunc.cpp|remcmd.cpp|pidAutoTune.cpp|pid.cpp|mainLoop.cpp|lclcmdX.cpp|lclcmd.cpp|latheX.cpp|lathe.cpp|interrupts.cpp|encoder.cpp|arc.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lathe_src"/>
 						<entry excluding="stm32Info.cpp|stm32f1spi.c|stm32f1i2c.c|getSP.S|DHT.cpp|wifi.cpp|TimerThree.cpp|stm32f1tim.c|stm32f1gpio.c|stm32f1dma.c|stm32f1adc.c|printf.cpp|ntp.cpp|monitor.cpp|dns.cpp|current.cpp|CRC32.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="monitor"/>
-						<entry excluding="stm32f1xx_hal_dma.c|stm32f1xx_hal_adc.c|stm32f1xx_hal_adc_ex.c|monitor.cpp|Time.cpp|_write.c|Timer.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
