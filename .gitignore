@@ -42,3 +42,4 @@ cscope.out
 /Debug/
 STM32CubeIDE/*
 src/stm32Info.cpp
+License.md
