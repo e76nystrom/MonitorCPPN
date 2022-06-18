@@ -74,11 +74,11 @@
 									<listOptionValue builtIn="false" value="USE_FULL_ASSERT"/>
 									<listOptionValue builtIn="false" value="TRACE"/>
 									<listOptionValue builtIn="false" value="OS_USE_TRACE_ITM"/>
-									<listOptionValue builtIn="false" value="STM32F30X"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="HSE_VALUE=8000000"/>
 									<listOptionValue builtIn="false" value="STM32F103xB"/>
 									<listOptionValue builtIn="false" value="USE_FULL_LL_DRIVER"/>
+									<listOptionValue builtIn="false" value="ARDUINO_NUCLEO_F103RB"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.asmlisting.215255886" name="Generate assembler listing (-Wa,-adhlns=&quot;$@.lst&quot;)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.asmlisting" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.warning.missingprototypes.1507044941" name="Warn if a global function has no prototype (-Wmissing-prototypes)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.warning.missingprototypes" useByScannerDiscovery="true" value="true" valueType="boolean"/>
@@ -107,13 +107,13 @@
 									<listOptionValue builtIn="false" value="USE_FULL_ASSERT"/>
 									<listOptionValue builtIn="false" value="TRACE"/>
 									<listOptionValue builtIn="false" value="OS_USE_TRACE_ITM"/>
-									<listOptionValue builtIn="false" value="STM32F30X"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="HSE_VALUE=8000000"/>
 									<listOptionValue builtIn="false" value="STM32F103xB"/>
 									<listOptionValue builtIn="false" value="STM32MON"/>
 									<listOptionValue builtIn="false" value="USE_FULL_LL_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32F1"/>
+									<listOptionValue builtIn="false" value="ARDUINO_NUCLEO_F103RB"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.other.949130382" name="Other compiler flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.other" useByScannerDiscovery="true" value="" valueType="string"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.asmlisting.475742960" name="Generate assembler listing (-Wa,-adhlns=&quot;$@.lst&quot;)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.asmlisting" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -175,7 +175,7 @@
 						<entry excluding="stm32Info.cpp|sysmem.c|syscalls.c|spi.c|i2c.c|monitor.cpp|system_stm32f1xx.c|stm32f1xx_it.c|stm32f1xx_hal_tim_ex.c|stm32f1xx_hal_msp.c|startup_stm32f103xb.S|getSP.S|usart.c|Time.cpp|tim.c|rtc.c|main.c|gpio.c|dma.c|adc.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="MonitorSrc"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Src"/>
 						<entry excluding="i2cx.cpp|spix.cpp|lcd.cpp|handler.S|zcontrol.cpp|xcontrol.cpp|serialio.cpp|remvar.cpp|remfunc.cpp|remcmd.cpp|pidAutoTune.cpp|pid.cpp|mainLoop.cpp|lclcmdX.cpp|lclcmd.cpp|latheX.cpp|lathe.cpp|interrupts.cpp|encoder.cpp|arc.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lathe_src"/>
-						<entry excluding="stm32Info.cpp|stm32f1spi.c|stm32f1i2c.c|getSP.S|DHT.cpp|wifi.cpp|TimerThree.cpp|stm32f1tim.c|stm32f1gpio.c|stm32f1dma.c|stm32f1adc.c|printf.cpp|ntp.cpp|monitor.cpp|dns.cpp|current.cpp|CRC32.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="monitor"/>
+						<entry excluding="stm32f1Ngpio.c|stm32f1Nadc.c|stm32Info.cpp|stm32f1spi.c|stm32f1i2c.c|getSP.S|DHT.cpp|wifi.cpp|TimerThree.cpp|stm32f1tim.c|stm32f1gpio.c|stm32f1dma.c|stm32f1adc.c|printf.cpp|ntp.cpp|monitor.cpp|dns.cpp|current.cpp|CRC32.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="monitor"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

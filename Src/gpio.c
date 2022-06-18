@@ -23,6 +23,8 @@
 
 /* USER CODE BEGIN 0 */
 
+#if defined(ARDUINO_NUCLEO_F103RB)
+
 /* USER CODE END 0 */
 
 /*----------------------------------------------------------------------------*/
@@ -51,37 +53,57 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, Led_Pin|Dbg0_Pin|Dbg2_Pin|Dbg3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, LedN_Pin|LedC4_Pin|Dbg7_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LedA5_GPIO_Port, LedA5_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, Led_Pin|Dbg1_Pin|Dbg3_Pin|CS3_Pin
+                          |CS0_Pin|Dbg2_Pin|Dbg0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, SPI_SEL_Pin|Dbg1_Pin|Dbg4_Pin|Dbg5_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, CS2_Pin|CS1_Pin|Dbg6_Pin|Dbg4_Pin
+                          |B5_Pin|Dbg5_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = Led_Pin|Dbg0_Pin|Dbg2_Pin|Dbg3_Pin;
+  /*Configure GPIO pins : PCPin PCPin PCPin */
+  GPIO_InitStruct.Pin = LedN_Pin|LedC4_Pin|Dbg7_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = LedA5_Pin;
+  /*Configure GPIO pins : PAPin PAPin PAPin PAPin
+                           PAPin PAPin PAPin */
+  GPIO_InitStruct.Pin = Led_Pin|Dbg1_Pin|Dbg3_Pin|CS3_Pin
+                          |CS0_Pin|Dbg2_Pin|Dbg0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LedA5_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PBPin PBPin PBPin PBPin */
-  GPIO_InitStruct.Pin = SPI_SEL_Pin|Dbg1_Pin|Dbg4_Pin|Dbg5_Pin;
+  /*Configure GPIO pins : PCPin PCPin PCPin PCPin */
+  GPIO_InitStruct.Pin = C5_Pin|C6_Pin|C8_Pin|C9_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PBPin PBPin PBPin PBPin
+                           PBPin PBPin */
+  GPIO_InitStruct.Pin = CS2_Pin|CS1_Pin|Dbg6_Pin|Dbg4_Pin
+                          |B5_Pin|Dbg5_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = B4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(B4_GPIO_Port, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 2 */
+
+#endif	/* ARDUINO_NUCLEO_F103RB */
 
 /* USER CODE END 2 */

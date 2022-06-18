@@ -21,11 +21,16 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
+#if defined(ARDUINO_NUCLEO_F103RB)
+
+#include <stdio.h>
 
 #if defined(ARDUINO_ARCH_STM32)
 inline void Error_Handler() {}
-#define HAL_ADC_MspDeInit ADC_MspDeInit
 #define HAL_ADC_MspInit ADC_MspInit
+#define HAL_ADC_MspDeInit ADC_MspDeInit
+void ADC_MspInit(ADC_HandleTypeDef* adcHandle);
+void ADC_MspDeInit(ADC_HandleTypeDef* adcHandle);
 #endif
 
 /* USER CODE END 0 */
@@ -125,17 +130,25 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
   if(adcHandle->Instance==ADC1)
   {
   /* USER CODE BEGIN ADC1_MspInit 0 */
+//   printf("HAL_ADC_MspInit\n");
 
   /* USER CODE END ADC1_MspInit 0 */
     /* ADC1 clock enable */
     __HAL_RCC_ADC1_CLK_ENABLE();
 
+    __HAL_RCC_GPIOC_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**ADC1 GPIO Configuration
+    PC1     ------> ADC1_IN11
+    PC2     ------> ADC1_IN12
     PA0-WKUP     ------> ADC1_IN0
-    PA6     ------> ADC1_IN6
+    PA4     ------> ADC1_IN4
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_6;
+    GPIO_InitStruct.Pin = A6_Pin|A4_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = A0_Pin|A2_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
@@ -154,14 +167,26 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     /* ADC2 clock enable */
     __HAL_RCC_ADC2_CLK_ENABLE();
 
+    __HAL_RCC_GPIOC_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
     /**ADC2 GPIO Configuration
+    PC0     ------> ADC2_IN10
+    PC3     ------> ADC2_IN13
     PA1     ------> ADC2_IN1
-    PA7     ------> ADC2_IN7
+    PB0     ------> ADC2_IN8
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_7;
+    GPIO_InitStruct.Pin = A7_Pin|A5_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = A1_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    HAL_GPIO_Init(A1_GPIO_Port, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = A3_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    HAL_GPIO_Init(A3_GPIO_Port, &GPIO_InitStruct);
 
     /* ADC2 interrupt Init */
     HAL_NVIC_SetPriority(ADC1_2_IRQn, 0, 0);
@@ -178,16 +203,21 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
   if(adcHandle->Instance==ADC1)
   {
   /* USER CODE BEGIN ADC1_MspDeInit 0 */
+//   printf("HAL_ADC_MspInitN 1\n");
 
   /* USER CODE END ADC1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_ADC1_CLK_DISABLE();
 
     /**ADC1 GPIO Configuration
+    PC1     ------> ADC1_IN11
+    PC2     ------> ADC1_IN12
     PA0-WKUP     ------> ADC1_IN0
-    PA6     ------> ADC1_IN6
+    PA4     ------> ADC1_IN4
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_6);
+    HAL_GPIO_DeInit(GPIOC, A6_Pin|A4_Pin);
+
+    HAL_GPIO_DeInit(GPIOA, A0_Pin|A2_Pin);
 
     /* ADC1 interrupt Deinit */
   /* USER CODE BEGIN ADC1:ADC1_2_IRQn disable */
@@ -205,16 +235,23 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
   else if(adcHandle->Instance==ADC2)
   {
   /* USER CODE BEGIN ADC2_MspDeInit 0 */
+//   printf("HAL_ADC_MspInitN 2\n");
 
   /* USER CODE END ADC2_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_ADC2_CLK_DISABLE();
 
     /**ADC2 GPIO Configuration
+    PC0     ------> ADC2_IN10
+    PC3     ------> ADC2_IN13
     PA1     ------> ADC2_IN1
-    PA7     ------> ADC2_IN7
+    PB0     ------> ADC2_IN8
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1|GPIO_PIN_7);
+    HAL_GPIO_DeInit(GPIOC, A7_Pin|A5_Pin);
+
+    HAL_GPIO_DeInit(A1_GPIO_Port, A1_Pin);
+
+    HAL_GPIO_DeInit(A3_GPIO_Port, A3_Pin);
 
     /* ADC2 interrupt Deinit */
   /* USER CODE BEGIN ADC2:ADC1_2_IRQn disable */
@@ -232,5 +269,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 }
 
 /* USER CODE BEGIN 1 */
+
+#endif	/* ARDUINO_NUCLEO_F103RB */
 
 /* USER CODE END 1 */
