@@ -124,6 +124,12 @@ void Error_Handler(void);
 #define Dbg6_GPIO_Port GPIOB
 #define Dbg4_Pin GPIO_PIN_12
 #define Dbg4_GPIO_Port GPIOB
+#define SPI_SCK_Pin GPIO_PIN_13
+#define SPI_SCK_GPIO_Port GPIOB
+#define SPI_MISO_Pin GPIO_PIN_14
+#define SPI_MISO_GPIO_Port GPIOB
+#define SPI_MOSI_Pin GPIO_PIN_15
+#define SPI_MOSI_GPIO_Port GPIOB
 #define C6_Pin GPIO_PIN_6
 #define C6_GPIO_Port GPIOC
 #define Dbg7_Pin GPIO_PIN_7
